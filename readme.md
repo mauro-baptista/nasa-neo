@@ -44,6 +44,7 @@ Response:
     ...
 ]
 ````
+Response Format: JSON
 
 Response Status: 200
 
@@ -71,6 +72,8 @@ Response:
 }
 ````
 
+Response Format: JSON
+
 Response Status: 200
 
 ---
@@ -93,6 +96,8 @@ Response:
 }
 ````
 
+Response Format: JSON
+
 Response Status: 200
 
 ---
@@ -114,6 +119,8 @@ Response:
     "month": 7
 }
 ````
+
+Response Format: JSON
 
 Response Status: 200
 
