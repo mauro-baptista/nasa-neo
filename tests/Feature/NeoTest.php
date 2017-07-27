@@ -16,7 +16,7 @@ class NeoTest extends TestCase
         $hazardous = factory(Neo::class)->states('is_hazardous')->times(7)->create();
         factory(Neo::class)->states('is_not_hazardous')->times(11)->create();
 
-        $response = $this->get('/hazardous');
+        $response = $this->get('/neo/hazardous');
 
         $response->assertStatus(200);
         $response->assertJson($hazardous->toArray());
@@ -37,7 +37,7 @@ class NeoTest extends TestCase
             'speed' => 80,
         ]);
 
-        $response = $this->get('/fastest?hazardous=false');
+        $response = $this->get('/neo/fastest?hazardous=false');
 
         $response->assertStatus(200);
         $response->assertJson($fastest->toArray());
@@ -58,7 +58,7 @@ class NeoTest extends TestCase
             'speed' => 80,
         ]);
 
-        $response = $this->get('/fastest?hazardous=true');
+        $response = $this->get('/neo/fastest?hazardous=true');
 
         $response->assertStatus(200);
         $response->assertJson($fastest->toArray());
@@ -79,7 +79,7 @@ class NeoTest extends TestCase
             'date' => '2015-05-01'
         ]);
 
-        $response = $this->get('/best-year?hazardous=false');
+        $response = $this->get('/neo/best-year?hazardous=false');
 
         $response->assertStatus(200);
         $response->assertJson(['count' => 11, 'year' => 2016]);
@@ -100,7 +100,7 @@ class NeoTest extends TestCase
             'date' => '2015-05-01'
         ]);
 
-        $response = $this->get('/best-year?hazardous=true');
+        $response = $this->get('/neo/best-year?hazardous=true');
 
         $response->assertStatus(200);
         $response->assertJson(['count' => 7, 'year' => 2017]);
@@ -129,7 +129,7 @@ class NeoTest extends TestCase
             'date' => '2015-03-01'
         ]);
 
-        $response = $this->get('/best-month?hazardous=false');
+        $response = $this->get('/neo/best-month?hazardous=false');
 
         $response->assertStatus(200);
         $response->assertJson(['count' => 9, 'month' => 7]);
@@ -158,7 +158,7 @@ class NeoTest extends TestCase
             'date' => '2015-03-01'
         ]);
 
-        $response = $this->get('/best-month?hazardous=true');
+        $response = $this->get('/neo/best-month?hazardous=true');
 
         $response->assertStatus(200);
         $response->assertJson(['count' => 11, 'month' => 5]);
