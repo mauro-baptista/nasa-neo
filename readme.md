@@ -1,4 +1,4 @@
-### API to NeoWs - (Near Earth Object Web Service)
+# API to NeoWs - (Near Earth Object Web Service)
 
 ## Environment
 
@@ -21,7 +21,7 @@ For more information, visit [https://laravel.com/docs/5.4/installation]
 
 Type `php artisan nasa:get-offers` to retrieve the information from the last 3 days.
  
-[https://s3-us-west-2.amazonaws.com/carnou.com/nasa/nasa_command.png]
+ ![Command Line](https://s3-us-west-2.amazonaws.com/carnou.com/nasa/nasa_command.png)
 
 ## Endpoints
 
@@ -47,6 +47,8 @@ Response:
 
 Response Status: 200
 
+---
+
 [GET] `/neo/fastest`
 
 |Arguments|Default|Expects|Comment
@@ -71,6 +73,8 @@ Response:
 
 Response Status: 200
 
+---
+
 [GET] `/neo/best-year`
 
 |Arguments|Default|Expects|Comment
@@ -90,6 +94,8 @@ Response:
 ````
 
 Response Status: 200
+
+---
 
 [GET] `/neo/best-month`
 
