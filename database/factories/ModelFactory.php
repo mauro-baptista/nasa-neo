@@ -12,13 +12,26 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\User::class, function (Faker\Generator $faker) {
-    static $password;
-
+$factory->define(App\Models\Neo::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
-        'remember_token' => str_random(10),
+        'date' => $faker->date('Y-m-d'),
+        'reference' => $faker->numerify('######'),
+        'name' => $faker->word,
+        'speed' => $faker->randomFloat(3, 10, 100),
+        'is_hazardous' => false,
     ];
 });
+
+$factory->state(App\Models\Neo::class, 'is_hazardous', function () {
+    return [
+        'is_hazardous' => true,
+    ];
+});
+
+$factory->state(App\Models\Neo::class, 'is_not_hazardous', function () {
+    return [
+        'is_hazardous' => false,
+    ];
+});
+
+
