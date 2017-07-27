@@ -22,7 +22,7 @@ class NeoRepository implements NeoContract
      */
     public function getHazardous()
     {
-        return $this->neo->isHazardous()->get();
+        return $this->neo->isHazardous(true)->get();
     }
 
     /**
