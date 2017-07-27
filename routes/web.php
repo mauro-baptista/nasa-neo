@@ -15,7 +15,9 @@ Route::get('/', function () {
     return response()->json(["hello" => "world!"], 200);
 });
 
-Route::get('hazardous', 'NeoController@hazardous');
-Route::get('fastest', 'NeoController@fastest');
-Route::get('best-year', 'NeoController@bestYear');
-Route::get('best-month', 'NeoController@bestMonth');
+Route::group(['prefix' => 'neo/'], function () {
+    Route::get('hazardous', 'NeoController@hazardous');
+    Route::get('fastest', 'NeoController@fastest');
+    Route::get('best-year', 'NeoController@bestYear');
+    Route::get('best-month', 'NeoController@bestMonth');
+});
