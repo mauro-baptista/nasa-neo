@@ -98,7 +98,7 @@ class FeedRepository implements FeedContract
      * @param $endDate
      * @return \Illuminate\Support\Collection
      */
-    private function getFeedFromEndpoint($startDate, $endDate) : Collection
+    public function getFeedFromEndpoint($startDate, $endDate) : Collection
     {
         $client = new GuzzleHttp\Client();
 

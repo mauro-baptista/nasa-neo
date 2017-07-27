@@ -25,4 +25,14 @@ interface FeedContract
      * @return int
      */
     public function store(Collection $items) : int;
+
+    /**
+     * Call NASA API endpoint to
+     * retrieve information
+     *
+     * @param $startDate
+     * @param $endDate
+     * @return \Illuminate\Support\Collection
+     */
+    public function getFeedFromEndpoint($startDate, $endDate) : Collection;
 }
