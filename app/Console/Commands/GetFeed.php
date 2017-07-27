@@ -41,6 +41,10 @@ class GetFeed extends Command
             (int) $this->option('days')
         );
 
-        $this->line(printf("%s items saved on database", $amount));
+        if (! app()->environment('testing')) {
+            $this->line(printf("%s items saved on database", $amount));
+        }
     }
+
+
 }
